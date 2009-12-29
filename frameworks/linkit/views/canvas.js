@@ -568,7 +568,7 @@ LinkIt.CanvasView = SC.CollectionView.extend({
        for (i = 0; i < numNodes; i++) {
          node = nodes.objectAt(i);
          if (node && (key = node.get('linksKey'))) {
-           nodeLinks = node.get(key);
+           nodeLinks = node.get(key) || [];
            links = links.concat(nodeLinks);
          }
        }
