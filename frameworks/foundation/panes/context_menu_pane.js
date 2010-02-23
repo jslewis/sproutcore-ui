@@ -83,8 +83,11 @@ SCUI.ContextMenuPane = SC.MenuPane.extend({
       this.set('preferType', SC.PICKER_MENU) ;
       this.set('preferMatrix', [offsetX + 2, offsetY + 2, 1]) ;
       this.endPropertyChanges();
-      this.append();
+  
+      this.adjust('height', this.get('menuHeight'));
       this.positionPane();
+
+      this.append();
       this.becomeKeyPane();
   
       return YES;
@@ -94,7 +97,6 @@ SCUI.ContextMenuPane = SC.MenuPane.extend({
     }
     return NO;
   },
-  
 
   /**
     Override remove() to restore the default browser context menus when this pane goes away.
